@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  feature: false
+  featured: false
   title: MyString
   url: MyString
   image_url: MyString
@@ -12,7 +12,7 @@ one:
   event: one
 
 two:
-  feature: false
+  featured: false
   title: MyString
   url: MyString
   image_url: MyString
