@@ -13,8 +13,13 @@ O escopo da API é ter um CRUD de artigos retirados de uma API de terceiro. Com 
 ## Configurações e uso da aplicação
 
   - Run>
-    1. ```bundle install```
-    2. ```rails dev:setup```
+    1. ```docker-compose up -d``` - create and configure initial environment;
+    2. ```docker-compose exec app bash``` - access docker bash console;
+    3. ```bundle install``` - install rails dependencies;
+    4. ```bin/rails db:environment:set RAILS_ENV=development``` - set an environment;
+    5. ```rails db:setup``` - setup and configure database;
+    6. ```rails server ``` - run application (default port: 3000);
+
 ## 
 
 * How to run the test suite
@@ -22,5 +27,3 @@ O escopo da API é ter um CRUD de artigos retirados de uma API de terceiro. Com 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
