@@ -2,6 +2,6 @@
 
 class ArticlesController < ApplicationController
   def index
-    head :ok
+    render json: Article.all
   end
 end
