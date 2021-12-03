@@ -13,7 +13,7 @@ services:
     build:
       context: .
     volumes:
-      - .:/app
+      - ./space_flight_news:/app
     ports:
       - 3000:3000
     environment:
