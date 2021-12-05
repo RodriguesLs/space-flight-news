@@ -2,7 +2,9 @@ require "test_helper"
 
 class LaunchTest < ActiveSupport::TestCase
   test "should save launch" do
-    launch = Launch.new(provider: 'some_provider')
+    article = articles(:one)
+
+    launch = Launch.new(provider: 'some_provider', article_id: article.id)
 
     assert launch.save
   end

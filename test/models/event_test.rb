@@ -2,7 +2,9 @@ require "test_helper"
 
 class EventTest < ActiveSupport::TestCase
   test "should save event" do
-    event = Event.new(provider: 'some_provider')
+    article = articles(:one)
+
+    event = Event.new(external_id: 11, provider: 'some_provider', article_id: article.id)
 
     assert event.save
   end

@@ -2,9 +2,6 @@ require "test_helper"
 
 class ArticleTest < ActiveSupport::TestCase
   test "should save an article" do
-    launch = Launch.create(provider: 'some_launcher')
-    event = Event.create(provider: 'some_event')
-
     article = Article.new(
       featured: true,
       title: 'some_title',
@@ -13,8 +10,6 @@ class ArticleTest < ActiveSupport::TestCase
       news_site: 'some_news_site',
       summary: 'some_summary',
       published_at: 'some_published_at',
-      launch: launch,
-      event: event
     )
 
     assert article.save

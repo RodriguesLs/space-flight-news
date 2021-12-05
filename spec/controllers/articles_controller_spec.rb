@@ -7,7 +7,7 @@ RSpec.describe ArticlesController, type: :controller do
     before { get :index }
 
     it { is_expected.to be_truthy }
-    it { expect(json_page).to eq(articles.as_json) }
     it { expect(response).to have_http_status(:ok) }
+    it { expect(json_page).to eq(articles.as_json) }
   end
 end

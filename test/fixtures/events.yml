@@ -2,6 +2,9 @@
 
 one:
   provider: MyString
+  article: articles(:one)
+
 
 two:
   provider: MyString
+  article: articles(:one)
