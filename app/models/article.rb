@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  belongs_to :launch
-  belongs_to :event
+  has_many :launches
+  has_many :events
 
   validates :title, presence: true
 end

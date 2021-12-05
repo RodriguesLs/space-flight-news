@@ -23,26 +23,28 @@ ActiveRecord::Schema.define(version: 2021_12_03_024859) do
     t.string "news_site"
     t.string "summary"
     t.string "published_at"
-    t.bigint "launch_id", null: false
-    t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_articles_on_event_id"
-    t.index ["launch_id"], name: "index_articles_on_launch_id"
   end
 
   create_table "events", force: :cascade do |t|
+    t.string "external_id"
     t.string "provider"
+    t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_events_on_article_id"
   end
 
   create_table "launches", force: :cascade do |t|
+    t.string "external_id"
     t.string "provider"
+    t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_launches_on_article_id"
   end
 
-  add_foreign_key "articles", "events"
-  add_foreign_key "articles", "launches"
+  add_foreign_key "events", "articles"
+  add_foreign_key "launches", "articles"
 end
