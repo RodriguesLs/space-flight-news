@@ -40,4 +40,10 @@ No projeto usamos o Mini-test e o RSpec:
 
 Ao instalar o projeto com o docker, apṍs o ```bundle install```, para o funcionamento da CRON, é necessário usar o comando ```whenever --update-cron```. Isso escreverá no arquivo cron do docker para que a tarefa seja executada.
 
+
+## Link da apresentação
+
+(Apresentação no loom)[https://www.loom.com/share/b948ec1dcc9f4a45bf01cc609c3b92ed]
+
 > This is a challenge by (Coodesh)[https://coodesh.com/]
+
