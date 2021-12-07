@@ -47,4 +47,29 @@ RSpec.describe ArticlesController, type: :controller do
     it { expect(json_page['published_at']).not_to be_nil }
     it { expect(json_page['published_at'].to_date).to eq(json_page['updated_at'].to_date) }
   end
+
+  describe 'PATCH #update' do
+    let(:article) { create :article }
+    let(:params) do
+      {
+        id: article.id,
+        article: {
+          title: 'another title'
+        }
+      }
+    end
+
+    before { patch :update, params: params }
+
+    it { expect(response).to have_http_status(:ok) }
+    it { expect(json_page['title']).to eq('another title') }
+  end
+
+  describe 'DELETE #destroy' do
+    let(:article) { create :article }
+
+    before { delete :destroy, params: { id: article.id } }
+
+    it { expect(response).to have_http_status(:no_content) }
+  end
 end

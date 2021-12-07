@@ -15,6 +15,20 @@ class ArticlesController < ApplicationController
     render json: article, status: :created
   end
 
+  def update
+    article = Article.find(params[:id])
+
+    article.update(article_params)
+
+    render json: article.reload
+  end
+
+  def destroy
+    Article.find(params[:id]).destroy
+
+    head :no_content
+  end
+
   private
 
   def article_params

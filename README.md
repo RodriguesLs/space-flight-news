@@ -10,7 +10,7 @@ O escopo da API é ter um CRUD de artigos retirados de uma API de terceiro. Com 
   * Node 10.24
   * Yarn 1.22
 
-## Configurações e uso da aplicação
+## Configurações
 
   - Run>
     1. ```docker-compose up -d``` - create and configure initial environment;
@@ -22,7 +22,13 @@ O escopo da API é ter um CRUD de artigos retirados de uma API de terceiro. Com 
 
 ## 
 
-* How to run the test suite
+## Como rodar a suíte de tests
+
+No projeto usamos o Mini-test e o RSpec:
+
+- Para rodar o Mini-test, basta usar o comando ```rails test```;
+
+- Para rodar o RSpec, basta usar o comando ```rspec spec/```, para rodar todos os testes ou ```rspec spec/path_to_file``` para rodar um arquivo específico.
 
 * Services (job queues, cache servers, search engines, etc.)
 
