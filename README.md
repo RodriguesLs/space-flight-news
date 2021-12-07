@@ -20,7 +20,13 @@ O escopo da API é ter um CRUD de artigos retirados de uma API de terceiro. Com 
     5. ```rails db:setup``` - setup and configure database;
     6. ```rails server ``` - run application (default port: 3000);
 
-## 
+## Como ativar a CRON
+
+  Após rodar o ```bundle install``` e conferir se a biblioteca cron está instalada (no Sistema Operacional):
+
+  - Run>
+    1. ```bundle exec whenever --update-crontab```;
+    2. Depois, para verificar, basta usar o comando: ```crontab -l```;
 
 ## Como rodar a suíte de tests
 
@@ -30,6 +36,8 @@ No projeto usamos o Mini-test e o RSpec:
 
 - Para rodar o RSpec, basta usar o comando ```rspec spec/```, para rodar todos os testes ou ```rspec spec/path_to_file``` para rodar um arquivo específico.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Para rodar a CRON
 
-* Deployment instructions
+Ao instalar o projeto com o docker, apṍs o ```bundle install```, para o funcionamento da CRON, é necessário usar o comando ```whenever --update-cron```. Isso escreverá no arquivo cron do docker para que a tarefa seja executada.
+
+> This is a challenge by (Coodesh)[https://coodesh.com/]

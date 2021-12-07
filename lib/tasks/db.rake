@@ -14,7 +14,7 @@ namespace :db do
       article.delete('launches')
       article.delete('events')
 
-      @persisted_article = Article.find_or_create_by(article)
+      @persisted_article = find_or_create_article(article)
 
       find_or_create_events(events) unless events.empty?
       find_or_create_launches(launches) unless launches.empty?
@@ -22,6 +22,18 @@ namespace :db do
 
     puts '## Articles updated ##'
     puts "=> Articles.count (after): #{Article.count}"
+  end
+
+  def find_or_create_article(article)
+    persisted_article = Article.find_by(id: article['id'])
+
+    if persisted_article
+      persisted_article.update(article)
+
+      return persisted_article.reload
+    end
+
+    Article.create!(article)
   end
 
   def find_or_create_launches(launches)

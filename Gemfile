@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'whenever', '~> 1.0.0'
+
 gem 'active_model_serializers', '~> 0.10.2'
 
 gem 'httparty', '~> 0.20.0'
