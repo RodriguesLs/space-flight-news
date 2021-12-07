@@ -12,6 +12,7 @@ RSpec.describe ArticleSerializer do
 
   it 'respond to attributes' do
     expect(serializer.attributes.keys).to contain_exactly(
+      :id,
       :featured,
       :title,
       :url,

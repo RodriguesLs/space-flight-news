@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :featured, :title, :url, :image_url, :news_site,
+  attributes :id, :featured, :title, :url, :image_url, :news_site,
              :summary, :published_at, :updated_at, :launches, :events
 
   has_many :events, only: :id
